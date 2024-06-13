@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -pa | sed '/^\.\.$/d' | sed '/^\.$/d' | awk '{ORS = (NR%2 == 0 ? "\n" : ", ")} 1; END {print ""}'
+files=$(ls -pa | sed '/^\.\.$/d' | sed '/^\.$/d' | sed -E 's|([^/])$|\1/'); echo -n "${files::-2}" && echo
