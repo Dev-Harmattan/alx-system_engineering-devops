@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -pa | sed 's/^\.\.$/,../; s/^\.$/./' | sort -df | sed ':a;N;$!ba;s/\n/, /g' | sed -E 's|([^/])$|\1/|' && echo
+ls -pam
